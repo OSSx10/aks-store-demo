@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: ossxaksstoredemo 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ossxaksstoredemo
+  template:
+    metadata:
+      labels:
+        app: ossxaksstoredemo 
+    spec:
+      containers:
+        - name: ossxaksstoredemo 
+          image: acrk8sdemo001.azurecr.io/ossxaksstoredemo
+          ports:
+          - containerPort: 5001
